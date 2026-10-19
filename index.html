@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DrumFill2 · a drummer in your phone</title>
+<meta name="description" content="DrumFill2 is an Android app that plays full drum arrangements for practice and live gigs: intro, verses, choruses, fills and endings, by touch alone or with a foot pedal.">
+<meta name="theme-color" content="#18191C">
+<meta property="og:title" content="DrumFill2 · a drummer in your phone">
+<meta property="og:description" content="Full songs, real fills, big buttons. Follow chart or Follow me. Android, free download.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rbdone.github.io/drumfill2-site/">
+<meta property="og:image" content="https://rbdone.github.io/drumfill2-site/img/social-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Sans:wght@400;600&family=Share+Tech+Mono&display=swap">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="DrumFill2 home">
+      <img src="img/icon.svg" width="30" height="30" alt="">
+      DrumFill2
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#problems">Why</a>
+      <a href="#workflows">Workflows</a>
+      <a href="#features">Features</a>
+      <a href="guides/">Guides</a>
+      <a href="#praise">Praise</a>
+      <a href="#faq">FAQ</a>
+      <a class="dl" href="#download">Download</a>
+    </nav>
+    <button class="theme-btn" type="button" aria-label="Switch theme">
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="notes" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <p class="silk">For guitarists, singers and bands without a drummer</p>
+      <h1 id="hero-title">A drummer in your <span class="glow">phone</span>.</h1>
+      <p class="lede">DrumFill2 plays whole songs, not loops: intro, verses, choruses, a bridge and a proper ending, with real fills in between. Let it follow the chart, or make it follow <em>you</em> with big on-screen FILL, NEXT and END keys. A foot pedal is optional; touch is enough.</p>
+      <div class="ctas">
+        <a class="key orange" href="#download">↓ Get the APK</a>
+        <a class="key ghost" href="#workflows">See it work</a>
+      </div>
+      <ul class="chips" aria-label="Highlights">
+        <li>Android 9+</li><li>300 original patterns</li><li>7 kits</li><li>No account, no server</li>
+      </ul>
+    </div>
+
+    <!-- interactive toy: every sound synthesised in the browser -->
+    <div class="machine float" id="toy" role="group" aria-label="Try it: a tiny playable drum machine (sound on)">
+      <div class="lcd">
+        <div class="lcd-row"><span class="lbl">Section</span><span class="lbl">BPM</span></div>
+        <div class="lcd-row"><span class="big" data-lcd="section">INTRO</span><span class="big" data-lcd="bpm">104</span></div>
+        <div class="lcd-row"><span data-lcd="bar">BAR 1/1</span><span class="msg" data-lcd="msg"></span></div>
+        <div class="leds" aria-hidden="true"><span class="led"></span><span class="led"></span><span class="led"></span><span class="led"></span></div>
+        <div class="song-strip" aria-label="Song sections"></div>
+      </div>
+      <div class="deck">
+        <button class="key" type="button" data-act="mode" aria-pressed="false">FOLLOW CHART</button>
+        <button class="key" type="button" data-act="tempo-down" aria-label="Tempo down">−</button>
+        <button class="key" type="button" data-act="tempo-up" aria-label="Tempo up">+</button>
+        <button class="key next" type="button" data-act="next">NEXT ▸ A</button>
+        <button class="key" type="button" data-act="end">END</button>
+        <button class="key orange play" type="button" data-act="play">▶ PLAY</button>
+      </div>
+      <div class="pads">
+        <button class="pad" type="button" data-act="fill">FILL<small>LANDS ON THE NEXT 1</small></button>
+        <button class="pad big" type="button" data-act="big">BIG<small>1 BAR</small></button>
+      </div>
+      <div class="kitrow" aria-label="Single drums">
+        <button class="key" type="button" data-hit="kick">KICK</button>
+        <button class="key" type="button" data-hit="snare">SNARE</button>
+        <button class="key" type="button" data-hit="hat">HAT</button>
+        <button class="key" type="button" data-hit="crash">CRASH</button>
+      </div>
+      <p class="machine-note">Sound on. A toy made in your browser with synthesised drums; the app has real sampled kits.</p>
+      <p class="sr" aria-live="polite" id="toy-live"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEMS ============ -->
+<section id="problems" class="alt" aria-labelledby="p-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="silk">The problems it was built for</p>
+      <h2 id="p-title">Every musician without a drummer knows these.</h2>
+      <p>DrumFill2 started from a short list of real situations: the solo act at a bar gig, the band rehearsing without its drummer, the learner looping a chorus, the songwriter who needs a drum track now. Here is each problem and what the app does about it.</p>
+    </div>
+    <div class="problems">
+      <article class="problem reveal" style="--c: var(--blue)">
+        <div class="pain">A drum loop is not a song.</div>
+        <p>Loops never change, never fill, never end. <strong>DrumFill2 plays a full arrangement</strong>: Intro → A → B → Chorus (repeated) → Bridge → Outro, with fills into each section, a crash on the chorus and a real ending.</p>
+        <a href="guides/songs.html#builder">Build a song →</a>
+      </article>
+      <article class="problem reveal" style="--c: var(--orange)">
+        <div class="pain">My hands are on the guitar.</div>
+        <p>In <strong>Follow chart</strong> it plays the whole form with zero input. In <strong>Follow me</strong> the keys are huge (64 px and up), fire the instant your finger touches, and nothing you need mid-song is behind a menu.</p>
+        <a href="guides/playing.html#follow">Follow chart vs Follow me →</a>
+      </article>
+      <article class="problem reveal" style="--c: var(--teal)">
+        <div class="pain">The band stretched the solo. Now what?</div>
+        <p>Tap <strong>+2 BARS</strong> (as often as you like), <strong>LOOP</strong> to stay put, <strong>NEXT</strong> when the singer comes back in. Section changes always land on the bar line.</p>
+        <a href="guides/playing.html#extend">Stretch a section →</a>
+      </article>
+      <article class="problem reveal" style="--c: var(--violet)">
+        <div class="pain">Machines drift. Screens go dark.</div>
+        <p>A sample-accurate engine keeps the time. Lock the phone, put it in your pocket, switch apps: <strong>the beat keeps going</strong>, with Play / Stop / Fill on the lock screen.</p>
+        <a href="guides/playing.html#background">Screen-off playback →</a>
+      </article>
+      <article class="problem reveal" style="--c: var(--green)">
+        <div class="pain">I don't have time to program drums.</div>
+        <p><strong>Useful in 30 seconds</strong>: a featured groove is ready on first launch, plus 19 demo songs. Pick a genre and a form in Song Builder, type <code>I2 V8 C8 V8 C8 O2</code> in Quick Chart, or <strong>beatbox</strong> it into the mic.</p>
+        <a href="guides/songs.html#quickchart">Type a chart →</a>
+      </article>
+      <article class="problem reveal" style="--c: var(--pink)">
+        <div class="pain">The gig is chaos.</div>
+        <p><strong>Gig mode</strong> runs a pre-show check (Do Not Disturb, battery, output test, kits loaded) and locks the stage screen. <strong>Band view</strong> shows the band a huge beat counter. Setlists segue song to song.</p>
+        <a href="guides/live.html#gig">Run a gig →</a>
+      </article>
+      <article class="problem reveal" style="--c: var(--grey)">
+        <div class="pain">It sounds like a toy.</div>
+        <p>Five multisampled acoustic kits recorded from real drums (velocity layers, round-robin), two synthesised electronic kits, your own SFZ or Hydrogen kits, and Freesound with your own free key.</p>
+        <a href="guides/sounds.html#kits">Kits and sounds →</a>
+      </article>
+      <article class="problem reveal" style="--c: var(--blue)">
+        <div class="pain">Practice gets boring fast.</div>
+        <p><strong>LOOP</strong> the chorus, let the <strong>TRAIN</strong>er raise the tempo every few passes, and switch on <strong>DROP</strong> to cut the drums for random bars and check your own time.</p>
+        <a href="guides/playing.html#practice">Practice tools →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKFLOWS ============ -->
+<section id="workflows" aria-labelledby="w-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="silk">Workflows</p>
+      <h2 id="w-title">Six ways people use it.</h2>
+      <p>Real screenshots from the app on an Android phone emulator. Swipe the pictures sideways.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Workflows">
+      <button role="tab" id="t-practice" aria-controls="w-practice" aria-selected="true" style="--c: var(--blue)">Practice</button>
+      <button role="tab" id="t-gig" aria-controls="w-gig" aria-selected="false" tabindex="-1" style="--c: var(--orange)">Live gig</button>
+      <button role="tab" id="t-build" aria-controls="w-build" aria-selected="false" tabindex="-1" style="--c: var(--teal)">Build a song</button>
+      <button role="tab" id="t-chart" aria-controls="w-chart" aria-selected="false" tabindex="-1" style="--c: var(--violet)">Quick Chart</button>
+      <button role="tab" id="t-beatbox" aria-controls="w-beatbox" aria-selected="false" tabindex="-1" style="--c: var(--pink)">Beatbox</button>
+      <button role="tab" id="t-kits" aria-controls="w-kits" aria-selected="false" tabindex="-1" style="--c: var(--green)">Kits &amp; Freesound</button>
+    </div>
+
+    <div class="flow" role="tabpanel" id="w-practice" aria-labelledby="t-practice">
+      <div>
+        <h3>Practice a song, then nail the chorus</h3>
+        <ol>
+          <li><strong>Library → a song.</strong> One tap opens it on Play, stopped, with the arrangement in the display.</li>
+          <li><strong>▶ PLAY</strong> in Follow chart: a spoken count-in, then the whole form plays by itself and stops on its ending.</li>
+          <li><strong>Tap the Chorus block</strong> in the strip, then <strong>LOOP</strong> and <strong>TRAIN</strong>: the chorus repeats and speeds up 5 BPM every 2 passes.</li>
+          <li><strong>■ STOP.</strong> A banner offers to save the new tempo to the song, or keep it just this time.</li>
+        </ol>
+        <a href="guides/playing.html#practice">Practice guide →</a>
+      </div>
+      <div class="shots">
+        <figure><img class="phone" src="img/screens/play-chart-chorus.webp" width="540" height="1200" loading="lazy" alt="Play screen in Follow chart: CHORUS section at 112 BPM, the FILL pad lit orange, NEXT shows A."><figcaption>Follow chart, in the chorus</figcaption></figure>
+        <figure><img class="phone" src="img/screens/play-practice.webp" width="540" height="1200" loading="lazy" alt="Play screen with LOOP and TRAIN +5 lit and the display reading looping, pass 2."><figcaption>LOOP + TRAIN</figcaption></figure>
+        <figure><img class="phone" src="img/screens/play-save-tempo.webp" width="540" height="1200" loading="lazy" alt="Stopped Play screen with a banner: Tempo 117 (song is 112), Save to song, Just this time."><figcaption>Save the tempo, or not</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="flow" role="tabpanel" id="w-gig" aria-labelledby="t-gig" hidden>
+      <div>
+        <h3>Friday night: setlist, pedal, Follow me</h3>
+        <ol>
+          <li><strong>Setlists → New setlist</strong>, add your songs, and set what happens after each: <strong>Stop</strong>, <strong>Segue</strong> or <strong>Click through</strong>.</li>
+          <li><strong>🎤 GIG MODE</strong> checks Do Not Disturb, battery, the output (with a test hit) and the kits, then <strong>START GIG</strong> opens Play with stage lock on.</li>
+          <li>Switch to <strong>Follow me</strong>. Strum; tap <strong>FILL</strong> or <strong>NEXT</strong> between phrases, or press your pedal. <strong>END</strong> plays the outro.</li>
+          <li>Between songs the big <strong>NEXT SONG</strong> key loads the next one. Turn the phone sideways for <strong>Band view</strong>.</li>
+        </ol>
+        <a href="guides/live.html">Live guides →</a>
+      </div>
+      <div class="shots">
+        <figure><img class="phone" src="img/screens/setlist.webp" width="540" height="1200" loading="lazy" alt="Setlist Friday at the Harbor: 4 songs, the first segues with a 2-bar tempo ramp, the second clicks through."><figcaption>A setlist with segues</figcaption></figure>
+        <figure><img class="phone" src="img/screens/gig-checklist.webp" width="540" height="1200" loading="lazy" alt="Gig mode checklist: Do Not Disturb on, battery 100%, phone speaker test playing, screen stays awake, setlist loaded. START GIG."><figcaption>Gig mode pre-show check</figcaption></figure>
+        <figure><img class="phone" src="img/screens/play-gig-locked.webp" width="540" height="1200" loading="lazy" alt="Play screen locked for the stage: set 1 of 4, a NEXT SONG key reads Backroad Two-Step 150."><figcaption>Stage lock + NEXT SONG</figcaption></figure>
+        <figure><img class="phone" src="img/screens/play-followme-waiting.webp" width="540" height="1200" loading="lazy" alt="Follow me: the intro reads BAR 3 of 1, waiting for NEXT; the NEXT key glows blue and FILL is white-hot."><figcaption>Follow me: waiting for your NEXT</figcaption></figure>
+        <figure class="wide"><img class="phone" src="img/screens/band-view.webp" width="1200" height="540" loading="lazy" alt="Band view in landscape: a huge orange 3, CHORUS, 5 bars left, NEXT Bridge, and FILL, NEXT, STOP keys along the bottom."><figcaption>Band view, for the band</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="flow" role="tabpanel" id="w-build" aria-labelledby="t-build" hidden>
+      <div>
+        <h3>From nothing to a full drum track in a minute</h3>
+        <ol>
+          <li><strong>Library → Build a song.</strong> Pick a genre (17 of them) and a form: Pop, Rock, AABA, 12-bar blues, Build/drop, Jam…</li>
+          <li><strong>BUILD SONG.</strong> Every section gets a groove, an end fill, an intro and an ending that belong together.</li>
+          <li>Don't like a section? <strong>🎲 Reroll</strong> it, or <strong>⇄ Swap</strong> to browse grooves already filtered to the song's genre, feel and tempo.</li>
+          <li><strong>SAVE &amp; PLAY.</strong> Fine-tune later in the Song Editor: cues, odd bars, tempo changes, ring-out endings.</li>
+        </ol>
+        <a href="guides/songs.html#builder">Song Builder guide →</a>
+      </div>
+      <div class="shots">
+        <figure><img class="phone" src="img/screens/builder-pick.webp" width="540" height="1200" loading="lazy" alt="Song Builder: genre chips from Rock to Odd time, and form choices with their bar counts."><figcaption>Genre + form</figcaption></figure>
+        <figure><img class="phone" src="img/screens/builder-result.webp" width="540" height="1200" loading="lazy" alt="A built jazz song: Intro Swing Kick-off, A Swing Ride, Chorus Bebop Bombs, Solo Hard-Bop Drive, Outro Jazz Ending, each with reroll and swap keys."><figcaption>Reroll or swap any section</figcaption></figure>
+        <figure><img class="phone" src="img/screens/builder-swap.webp" width="540" height="1200" loading="lazy" alt="Pick groove for A: filters set from the song (Jazz, swing, fits 150) with step-grid previews of each groove."><figcaption>Swap, pre-filtered</figcaption></figure>
+        <figure><img class="phone" src="img/screens/editor-arrangement.webp" width="540" height="1200" loading="lazy" alt="Song Editor arrangement tab: draggable steps Intro 1, A 8, B 4, Chorus 8 with minus and plus keys."><figcaption>Song Editor</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="flow" role="tabpanel" id="w-chart" aria-labelledby="t-chart" hidden>
+      <div>
+        <h3>Type the chart the band just called</h3>
+        <ol>
+          <li><strong>Library → Type a chart.</strong> Type tempo, meter, genre and sections: <code>@104 4/4 funk I2 V8 C8 (V8 C8)x2 Br8 C16 O2~</code></li>
+          <li>The arrangement previews live as you type. A mistake gets a plain-English fix: <em>“X4 isn't a section — did you mean S4 (solo)?”</em> with a one-tap <strong>Use S4</strong>.</li>
+          <li>The shortcut keys type the tricky bits for you: repeats, odd bars, cues, tempo changes, ring-outs.</li>
+          <li><strong>SAVE &amp; PLAY.</strong> The builder fills in grooves for the genre, so it plays at once.</li>
+        </ol>
+        <a href="guides/songs.html#quickchart">Quick Chart guide →</a>
+      </div>
+      <div class="shots">
+        <figure><img class="phone" src="img/screens/chart-error.webp" width="540" height="1200" loading="lazy" alt="Quick chart with a red hint: X4 isn't a section, did you mean S4 (solo)? and a Use S4 button."><figcaption>A friendly fix</figcaption></figure>
+        <figure><img class="phone" src="img/screens/chart-ok.webp" width="540" height="1200" loading="lazy" alt="Quick chart accepted: 11 steps, 80 bars, about 3:05 at 104, with a coloured preview and syntax cheat sheet."><figcaption>11 steps, ready to play</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="flow" role="tabpanel" id="w-beatbox" aria-labelledby="t-beatbox" hidden>
+      <div>
+        <h3>Beatbox the groove in your head</h3>
+        <ol>
+          <li><strong>Library → Beatbox.</strong> Headphones on for the click, choose 2, 4 or 8 bars, press <strong>● RECORD</strong> and go “pm-ti-ta-ti”.</li>
+          <li>The phone finds your kicks, snares and hats on a step grid and plays them back with a real kit, and says which library groove it sounds like.</li>
+          <li>Or build a <strong>whole song</strong>: Song Builder → Build by beatboxing records each section in turn, with a 2-bar pre-roll into every new one.</li>
+          <li>Teach it your sounds (5 of each) if your “ta” sounds like your “ti”. Recordings never leave the phone.</li>
+        </ol>
+        <a href="guides/beatbox.html">Beatbox guides →</a>
+      </div>
+      <div class="shots">
+        <figure><img class="phone" src="img/screens/beatbox.webp" width="540" height="1200" loading="lazy" alt="Record Beatbox screen: click in headphones switch, length 2, 4 or 8 bars, a red RECORD key."><figcaption>Record a groove</figcaption></figure>
+        <figure><img class="phone" src="img/screens/beatbox-song-prompt.webp" width="540" height="1200" loading="lazy" alt="Beatbox Song Builder: Intro, 2 bars, 1 of 6, 96 BPM locked, with a progress strip and the hint Count in or build up."><figcaption>Section by section</figcaption></figure>
+        <figure><img class="phone" src="img/screens/beatbox-song-rec.webp" width="540" height="1200" loading="lazy" alt="Recording the intro take: REC, bar 1 of 2, beat 3, auto-stops at the end of bar 2."><figcaption>It stops by itself</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="flow" role="tabpanel" id="w-kits" aria-labelledby="t-kits" hidden>
+      <div>
+        <h3>Make it sound like your band</h3>
+        <ol>
+          <li><strong>Kits</strong> lists the seven built-in kits with their licences; ▶ auditions each one.</li>
+          <li><strong>↑ Import kit</strong> takes a Hydrogen <code>.h2drumkit</code> or a zipped SFZ kit; check the mapping, then <strong>IMPORT KIT</strong>.</li>
+          <li><strong>Browse free kits</strong> lists kits from a public feed with their licence badges.</li>
+          <li><strong>Get more sounds</strong> walks you through a free Freesound key in about two minutes, then lets you fill kit slots with CC0 (or CC-BY) one-shots, credited automatically.</li>
+        </ol>
+        <a href="guides/sounds.html">Sound guides →</a>
+      </div>
+      <div class="shots">
+        <figure><img class="phone" src="img/screens/kits.webp" width="540" height="1200" loading="lazy" alt="Kits tab: Studio (public domain), Jazz Club, Vintage and Brushes (CC0), Heavy, each with an audition key."><figcaption>Built-in kits</figcaption></figure>
+        <figure><img class="phone" src="img/screens/kit-import.webp" width="540" height="1200" loading="lazy" alt="Import kit preview of a zipped SFZ kit: six instruments, each mapped, with play keys."><figcaption>Import an SFZ kit</figcaption></figure>
+        <figure><img class="phone" src="img/screens/freesound-1.webp" width="540" height="1200" loading="lazy" alt="Get more sounds step 1 of 6: 600k+ free sounds from Freesound, your own free key stays on this phone."><figcaption>Freesound setup</figcaption></figure>
+        <figure><img class="phone" src="img/screens/freesound-3.webp" width="540" height="1200" loading="lazy" alt="Create a key step: the three fields to fill in on Freesound, each with a copy button."><figcaption>Copy, paste, done</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section id="features" class="alt" aria-labelledby="f-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="silk">Everything it does</p>
+      <h2 id="f-title">The full feature list.</h2>
+      <p>Each feature links to a step-by-step how-to with pictures of the exact keys to tap.</p>
+    </div>
+    <div class="feature-groups">
+      <div class="feature-group reveal" style="--c: var(--orange)">
+        <h3>Playing</h3>
+        <ul class="features">
+          <li><a href="guides/playing.html#play"><b>Play a song</b><span>One tap, spoken count-in, full arrangement</span></a></li>
+          <li><a href="guides/playing.html#follow"><b>Follow chart / Follow me</b><span>Hands-off, or it waits for your cue</span></a></li>
+          <li><a href="guides/playing.html#fill"><b>FILL and BIG FILL</b><span>Lands on the next downbeat, never a repeat</span></a></li>
+          <li><a href="guides/playing.html#sections"><b>NEXT, PREV and jump</b><span>Section changes on the bar line; start from any section</span></a></li>
+          <li><a href="guides/playing.html#extend"><b>+2 BARS</b><span>Stretch the section for this time only</span></a></li>
+          <li><a href="guides/playing.html#end"><b>END and endings</b><span>Fixed, ring-out or ritard endings</span></a></li>
+          <li><a href="guides/playing.html#intensity"><b>Quiet · Normal · Loud</b><span>Live dynamics, from cross-stick to ride and crashes</span></a></li>
+          <li><a href="guides/playing.html#tempo"><b>Tempo, TAP and CRASH</b><span>Tap tempo, −/+ keys and a save-tempo prompt</span></a></li>
+          <li><a href="guides/playing.html#practice"><b>LOOP, TRAIN, DROP</b><span>Loop a section, speed it up, test your own time</span></a></li>
+          <li><a href="guides/playing.html#click"><b>Drums | Click and count-ins</b><span>Metronome mode, voice count-in, subdivisions</span></a></li>
+          <li><a href="guides/playing.html#arrange"><b>Quick arrange</b><span>Change bars, duplicate, delete, live</span></a></li>
+          <li><a href="guides/playing.html#band"><b>Band view</b><span>Huge beat counter for the band, latency-aligned</span></a></li>
+          <li><a href="guides/playing.html#stagelock"><b>Stage lock</b><span>Only the performance keys stay on screen</span></a></li>
+          <li><a href="guides/playing.html#background"><b>Screen-off playback</b><span>Keeps time locked, in the background, on the lock screen</span></a></li>
+        </ul>
+      </div>
+      <div class="feature-group reveal" style="--c: var(--teal)">
+        <h3>Songs and patterns</h3>
+        <ul class="features">
+          <li><a href="guides/songs.html#library"><b>Library</b><span>19 demo songs, genres, search, favourites</span></a></li>
+          <li><a href="guides/songs.html#builder"><b>Song Builder</b><span>Genre + form → a whole song, reroll or swap</span></a></li>
+          <li><a href="guides/songs.html#quickchart"><b>Quick Chart</b><span>Type <code>I2 V8 C8 O2</code>, get a song</span></a></li>
+          <li><a href="guides/songs.html#editor"><b>Song Editor</b><span>Sections, arrangement, odd bars, tempo and meter changes</span></a></li>
+          <li><a href="guides/songs.html#cues"><b>Cues</b><span>Stops, band hits, tacets and resumes, flashed a bar early</span></a></li>
+          <li><a href="guides/songs.html#patterns"><b>Pattern Browser</b><span>300 original patterns, filters, audition, similar</span></a></li>
+          <li><a href="guides/songs.html#pattern-editor"><b>Pattern Editor</b><span>Step grid, velocity, tap-record</span></a></li>
+          <li><a href="guides/songs.html#share"><b>Share, MIDI import, WAV export</b><span>Send songs and setlists to your band</span></a></li>
+        </ul>
+      </div>
+      <div class="feature-group reveal" style="--c: var(--blue)">
+        <h3>Live</h3>
+        <ul class="features">
+          <li><a href="guides/live.html#setlists"><b>Setlists and segues</b><span>Stop, segue with a tempo ramp, or click through</span></a></li>
+          <li><a href="guides/live.html#gig"><b>Gig mode</b><span>Pre-show checklist, Do Not Disturb, stage lock</span></a></li>
+          <li><a href="guides/live.html#pedals"><b>Foot pedals</b><span>2 or 4 buttons, Bluetooth/USB MIDI or page-turners</span></a></li>
+          <li><a href="guides/live.html#headset"><b>Headset and volume keys</b><span>FILL or NEXT from your earbuds</span></a></li>
+        </ul>
+      </div>
+      <div class="feature-group reveal" style="--c: var(--green)">
+        <h3>Sounds</h3>
+        <ul class="features">
+          <li><a href="guides/sounds.html#kits"><b>7 built-in kits</b><span>5 sampled acoustic kits, 2 generated electronic ones</span></a></li>
+          <li><a href="guides/sounds.html#import"><b>Import SFZ and Hydrogen kits</b><span>Preview, map, import</span></a></li>
+          <li><a href="guides/sounds.html#browse"><b>Browse free kits</b><span>A public kit feed with licence badges</span></a></li>
+          <li><a href="guides/sounds.html#freesound"><b>Freesound</b><span>Your own free key, CC0 by default, auto credits</span></a></li>
+          <li><a href="guides/sounds.html#audio"><b>Output presets and split</b><span>Headphones, speaker, Bluetooth, PA; drums L / click R</span></a></li>
+        </ul>
+      </div>
+      <div class="feature-group reveal" style="--c: var(--violet)">
+        <h3>Gear</h3>
+        <ul class="features">
+          <li><a href="guides/gear.html#midi-notes"><b>MIDI notes out</b><span>Play an e-drum module or plugin, note maps, offset</span></a></li>
+          <li><a href="guides/gear.html#midi-clock"><b>MIDI clock</b><span>Loopers and drum machines follow the tempo</span></a></li>
+          <li><a href="guides/gear.html#outputs"><b>Multi-output interfaces</b><span>Drums to the PA, click to your in-ears</span></a></li>
+        </ul>
+      </div>
+      <div class="feature-group reveal" style="--c: var(--pink)">
+        <h3>Beatbox</h3>
+        <ul class="features">
+          <li><a href="guides/beatbox.html#groove"><b>Beatbox a groove</b><span>Mic → step grid → a real kit</span></a></li>
+          <li><a href="guides/beatbox.html#teach"><b>Teach it your sounds</b><span>5 examples each, on the phone only</span></a></li>
+          <li><a href="guides/beatbox.html#song"><b>Beatbox Song Builder</b><span>A whole song, one section at a time</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRAISE ============ -->
+<section id="praise" class="praise" aria-labelledby="pr-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="silk">Praise for DrumFill2</p>
+      <h2 id="pr-title">Serious musicians LOVE DrumFill2.*</h2>
+      <p>We asked some of history's most serious musicians (and a few unserious emperors) what they think.</p>
+    </div>
+    <div class="quotes">
+      <figure class="quote reveal"><span class="stamp">PARODY</span>
+        <blockquote>“Da-da-da-DUM. Then FILL. Then NEXT. My Fifth finally has a drummer who waits for me.”</blockquote>
+        <figcaption><b>Ludwig van Beethoven</b>composer, 1770–1827 (did not say this)</figcaption></figure>
+      <figure class="quote reveal"><span class="stamp">PARODY</span>
+        <blockquote>“The Emperor said my music had too many notes. So I pressed QUIET. Problem solved.”</blockquote>
+        <figcaption><b>Wolfgang Amadeus Mozart</b>composer, 1756–1791 (made up)</figcaption></figure>
+      <figure class="quote reveal"><span class="stamp">PARODY</span>
+        <blockquote>“I wrote over a thousand works, and not one of them had a +2 BARS button. Deeply regrettable.”</blockquote>
+        <figcaption><b>Johann Sebastian Bach</b>Kapellmeister, 1685–1750 (invented)</figcaption></figure>
+      <figure class="quote reveal"><span class="stamp">PARODY</span>
+        <blockquote>“To FILL, or not to FILL: that is the question. Whether 'tis nobler to tap the big orange pad… yes. It is.”</blockquote>
+        <figcaption><b>William Shakespeare</b>playwright, 1564–1616 (never)</figcaption></figure>
+      <figure class="quote reveal"><span class="stamp">PARODY</span>
+        <blockquote>“The Analytical Engine weaves algebraic patterns as the loom weaves flowers. This one weaves ghost notes. I approve of both.”</blockquote>
+        <figcaption><b>Ada Lovelace</b>mathematician, 1815–1852 (sadly fictional)</figcaption></figure>
+      <figure class="quote reveal"><span class="stamp">PARODY</span>
+        <blockquote>“An army marches on its stomach. A band marches on its click track: drums left, click right.”</blockquote>
+        <figcaption><b>Napoléon Bonaparte</b>emperor, 1769–1821 (not a real quote)</figcaption></figure>
+      <figure class="quote reveal"><span class="stamp">PARODY</span>
+        <blockquote>“I arrived rolled up in a carpet. My setlist arrived as a .pdset file. Both made an entrance.”</blockquote>
+        <figcaption><b>Cleopatra VII</b>pharaoh, 69–30 BC (predates the phone by a bit)</figcaption></figure>
+      <figure class="quote reveal"><span class="stamp">PARODY</span>
+        <blockquote>“I sketched a flying machine, an armoured car and a mechanical drummer. Only one of them has Follow me mode.”</blockquote>
+        <figcaption><b>Leonardo da Vinci</b>polymath, 1452–1519 (entirely invented)</figcaption></figure>
+      <figure class="quote reveal"><span class="stamp">PARODY</span>
+        <blockquote>“To every action there is an equal and opposite reaction. Except FILL, which fires on touch-down and has no reaction time at all.”</blockquote>
+        <figcaption><b>Isaac Newton</b>physicist, 1643–1727 (we made this up)</figcaption></figure>
+      <figure class="quote reveal"><span class="stamp">PARODY</span>
+        <blockquote>“We are not amused. We are, however, ever so slightly grooving.”</blockquote>
+        <figcaption><b>Queen Victoria</b>monarch, 1819–1901 (apocryphal, and then some)</figcaption></figure>
+      <figure class="quote reveal"><span class="stamp">PARODY</span>
+        <blockquote>“In this world nothing is certain except death, taxes, and the downbeat after you press NEXT.”</blockquote>
+        <figcaption><b>Benjamin Franklin</b>printer and kite enthusiast, 1706–1790 (fabricated)</figcaption></figure>
+      <figure class="quote reveal"><span class="stamp">PARODY</span>
+        <blockquote>“And yet it moves. At exactly 112 BPM. With the screen off.”</blockquote>
+        <figcaption><b>Galileo Galilei</b>astronomer, 1564–1642 (did not own a phone)</figcaption></figure>
+      <figure class="quote reveal"><span class="stamp">PARODY</span>
+        <blockquote>“Quoth the Raven: ‘LOOP it.’ And the chorus played once more, and evermore, and never drifted.”</blockquote>
+        <figcaption><b>Edgar Allan Poe</b>poet, 1809–1849 (nevermore said this)</figcaption></figure>
+      <figure class="quote reveal"><span class="stamp">PARODY</span>
+        <blockquote>“Let them eat cake. And give the bassist the click in his in-ears.”</blockquote>
+        <figcaption><b>Marie Antoinette</b>queen, 1755–1793 (she never said the cake part either)</figcaption></figure>
+    </div>
+    <p class="disclaimer">* All quotes on this page are entirely made up, for fun. None of these people ever used, endorsed or heard of DrumFill2; most of them predate electricity, and all of them predate Android. Please don't cite them in your history homework.</p>
+  </div>
+</section>
+
+<!-- ============ DOWNLOAD ============ -->
+<section id="download" class="alt" aria-labelledby="d-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="silk">Download</p>
+      <h2 id="d-title">Get DrumFill2 v1.0 for Android.</h2>
+      <p>It isn't in an app store yet, so you install the APK file yourself (“sideloading”). It takes about a minute.</p>
+    </div>
+    <div class="download-box">
+      <div class="dl-card reveal">
+        <a class="key orange" href="https://github.com/rbdone/drumfill2-site/releases/latest/download/DrumFill2-v1.0.0-arm64-v8a.apk">↓ Download DrumFill2-v1.0.0-arm64-v8a.apk</a>
+        <ul class="meta">
+          <li>Version 1.0.0 · about 150 MB · Android 9 or newer</li>
+          <li>For 64-bit ARM phones (arm64-v8a): almost every Android phone from the last several years.</li>
+          <li>SHA-256 <button class="key ghost" type="button" data-copy="sha" style="min-height:32px;padding:0 10px;font-size:.7rem">Copy</button>
+            <code class="hash" id="sha">246be07d60afb479a6a28a078b7521598b56cfe5512fc024b78b706e181b633e</code></li>
+          <li>All checksums: <a href="https://github.com/rbdone/drumfill2-site/releases/latest/download/SHA256SUMS.txt">SHA256SUMS.txt</a> · <a href="https://github.com/rbdone/drumfill2-site/releases/latest">release page</a></li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <h3>Install it in four steps</h3>
+        <ol class="steps">
+          <li><strong>Open this page on your phone</strong> and tap the download button. If your browser warns about this file type, choose <strong>Download anyway</strong>.</li>
+          <li><strong>Open the downloaded APK</strong> (from the browser's downloads or the Files app). Android asks to allow installs from that app: tap <strong>Settings</strong>, switch on <strong>Allow from this source</strong> (“Install unknown apps”), then go back.</li>
+          <li><strong>Tap Install.</strong> If Google Play Protect says the developer is unknown, choose <strong>Install anyway</strong>. The APK is signed with the project's own key rather than a store key, which is why Android asks.</li>
+          <li><strong>Open DrumFill2</strong> and tap <strong>▶ PLAY</strong>. That's it: the featured groove plays with no setup.</li>
+        </ol>
+        <p class="note"><strong>Updating:</strong> install the newer APK over the old one. Your songs, setlists and settings stay. Uninstalling the app first would delete them.</p>
+        <p class="note warn"><strong>Tip:</strong> headphones or a cable to the PA are best. Bluetooth speakers add a delay, so buttons feel late; the app warns you once and has a compensation setting.</p>
+        <p>From a computer with USB debugging on: <code>adb install -r DrumFill2-v1.0.0-arm64-v8a.apk</code></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="faq" aria-labelledby="q-title">
+  <div class="wrap">
+    <div class="section-head reveal"><p class="silk">FAQ</p><h2 id="q-title">Questions, answered.</h2></div>
+    <details><summary>What does it cost?</summary><div>The APK is a free download. There is no account, no sign-in, no ads and no server: everything runs on your phone.</div></details>
+    <details><summary>Is there an iPhone version?</summary><div>No. DrumFill2 v1.0 is Android only, installed from the APK above.</div></details>
+    <details><summary>Why isn't it on Google Play?</summary><div>Not yet. For now it's distributed as a signed APK. Updates are new APKs you install over the old one; your songs stay.</div></details>
+    <details><summary>Do I need a foot pedal?</summary><div>No. Every action has its own big key on the Play screen, and Follow chart needs no input at all. A pedal (Bluetooth MIDI, USB MIDI, or a page-turner that sends key presses) is an optional shortcut. See <a href="guides/live.html#pedals">the pedal guide</a>.</div></details>
+    <details><summary>Does it need the internet?</summary><div>No. Playing, building songs, kits and beatboxing all work offline. Only Freesound and the free-kit browser go online, and only when you use them.</div></details>
+    <details><summary>Is Freesound included?</summary><div>The app talks to Freesound directly with <em>your own</em> free Freesound API key, which stays on your phone. The setup wizard takes about two minutes. CC0 sounds by default; CC-BY optional; non-commercial sounds are never offered.</div></details>
+    <details><summary>Where do the grooves come from?</summary><div>The 300 patterns are original encodings of common, traditional grooves (backbeats, shuffles, bossa, one-drop…). None are transcribed from recordings. The sampled kits come from openly licensed recordings of real drum kits; Settings → Credits lists every author and licence.</div></details>
+    <details><summary>Will it keep time with the screen off?</summary><div>Yes. Playback runs in the background with a notification, and the lock screen shows Play, Stop and Fill. Unplugging headphones or a phone call stops it cleanly.</div></details>
+    <details><summary>What about my beatbox recordings?</summary><div>They stay on your phone and are only used to re-analyse a take. You can delete them in Settings → Beatbox recordings. Nothing is uploaded.</div></details>
+    <details><summary>Which APK do I need?</summary><div>The <code>arm64-v8a</code> one, for nearly every modern phone. The release page also has APKs for older 32-bit phones (<code>armeabi-v7a</code>) and <code>x86_64</code>.</div></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="guides/">How-to guides</a>
+      <a href="#download">Download</a>
+      <a href="#faq">FAQ</a>
+      <a href="#praise">Praise (fake)</a>
+    </nav>
+    <p>DrumFill2 is an independent hobby project. Not affiliated with, endorsed by or connected to any drum machine maker, pedal maker, or the people quoted above. Freesound is a service of the Music Technology Group, Universitat Pompeu Fabra; DrumFill2 is not affiliated with it. Android is a trademark of Google LLC.</p>
+    <p>Screenshots are from the app running on an Android emulator. The drum toy on this page synthesises its sounds in your browser.</p>
+  </div>
+</footer>
+<script src="js/site.js" defer></script>
+</body>
+</html>

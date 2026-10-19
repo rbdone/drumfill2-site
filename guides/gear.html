@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gear · DrumFill2 guides</title>
+<meta name="description" content="MIDI out and multi-output interfaces, for players with more boxes than friends.">
+<meta name="theme-color" content="#18191C">
+<link rel="icon" href="../img/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Sans:wght@400;600&family=Share+Tech+Mono&display=swap">
+<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="DrumFill2 home"><img src="../img/icon.svg" width="30" height="30" alt="">DrumFill2</a>
+    <nav class="nav" aria-label="Main">
+      <a href="./">All guides</a>
+      <a href="playing.html">Playing</a>
+      <a href="songs.html">Songs and patterns</a>
+      <a href="live.html">Live</a>
+      <a href="sounds.html">Sounds</a>
+      <a href="gear.html" aria-current="page">Gear</a>
+      <a href="beatbox.html">Beatbox</a>
+      <a class="dl" href="../#download">Download</a>
+    </nav>
+    <button class="theme-btn" type="button" aria-label="Switch theme"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg></button>
+  </div>
+</header>
+<main id="main">
+<div class="wrap guide-hero" style="--c: var(--violet)">
+  <p class="crumbs"><a href="../">Home</a> › <a href="./">Guides</a> › Gear</p>
+  <h1>Gear</h1>
+  <p>MIDI out and multi-output interfaces, for players with more boxes than friends.</p>
+</div>
+<div class="wrap guide-layout">
+  <nav class="toc" aria-label="On this page">
+    <p class="silk">On this page</p>
+    <ol>
+      <li><a href="#midi-notes">MIDI notes out</a></li>
+      <li><a href="#midi-clock">MIDI clock</a></li>
+      <li><a href="#outputs">Multi-output audio interfaces</a></li>
+    </ol>
+  </nav>
+  <div>
+  <section class="guide" id="midi-notes" aria-labelledby="midi-notes-h">
+    <h2 id="midi-notes-h">MIDI notes out</h2>
+    <p class="intro">Play an e-drum module, a synth or a plugin from DrumFill2's grooves.</p>
+    <div class="guide-body">
+      <div>
+      <ol class="howto">
+        <li><strong>Settings → MIDI</strong>.<img class="btnimg" src="../img/buttons/midi-row.webp" width="360" height="66" loading="lazy" alt="Settings row: MIDI"></li>
+        <li>Under <strong>Send to</strong>, plug in a USB MIDI interface and tap <strong>Refresh</strong>, or <strong>Scan Bluetooth</strong> for a Bluetooth MIDI device, then pick it.<img class="btnimg" src="../img/buttons/midi-send.webp" width="340" height="150" loading="lazy" alt="Send to: Refresh and Scan Bluetooth keys"></li>
+        <li><strong>Sound source</strong>: Internal, MIDI (the phone's kit goes quiet) or Both.<img class="btnimg" src="../img/buttons/sound-source.webp" width="340" height="63" loading="lazy" alt="Sound source: Internal, MIDI, Both"></li>
+        <li>Adjust <strong>MIDI offset</strong> until the module lines up with the phone. The note map (General MIDI by default, channel 10) can be changed per instrument; hi-hat openness can go out as CC4.</li>
+      </ol>
+      </div>
+      <figure><img class="phone" src="../img/screens/midi.webp" width="540" height="1200" loading="lazy" alt="MIDI out: Sound source Internal, MIDI, Both; MIDI offset; General MIDI note map."><figcaption>Settings → MIDI</figcaption></figure>
+    </div>
+  </section>
+  <section class="guide" id="midi-clock" aria-labelledby="midi-clock-h">
+    <h2 id="midi-clock-h">MIDI clock</h2>
+    <p class="intro">Loopers, delays and drum machines follow DrumFill2's tempo.</p>
+    <div class="guide-body">
+      <div>
+      <ol class="howto">
+        <li>In <strong>Settings → MIDI</strong>, pick the device and switch on <strong>Send MIDI clock</strong>.<img class="btnimg" src="../img/buttons/midi-clock.webp" width="340" height="120" loading="lazy" alt="Send MIDI clock switch"></li>
+        <li>Clock follows the count-in, tempo changes and ritards; Start goes out on the song's first downbeat and Stop on STOP. The status line reports how it's going.</li>
+      </ol>
+      </div>
+      <figure><img class="phone" src="../img/screens/midi-clock.webp" width="540" height="1200" loading="lazy" alt="Send MIDI clock switch on, Status waiting for the device."><figcaption>Clock on</figcaption></figure>
+    </div>
+  </section>
+  <section class="guide" id="outputs" aria-labelledby="outputs-h">
+    <h2 id="outputs-h">Multi-output audio interfaces</h2>
+    <p class="intro">Drums to the PA, click and count-ins to your in-ears.</p>
+    <div class="guide-body">
+      <div>
+      <ol class="howto">
+        <li>Connect a USB audio interface with more than two outputs. <strong>Settings → Audio &amp; output → Multi-output interface</strong>.<img class="btnimg" src="../img/buttons/multi-row.webp" width="340" height="102" loading="lazy" alt="Multi-output interface row"></li>
+        <li>Switch on <strong>Separate outputs</strong>.<img class="btnimg" src="../img/buttons/separate.webp" width="340" height="85" loading="lazy" alt="Separate outputs switch"></li>
+        <li>Route <strong>Drums</strong>, <strong>Click</strong> and <strong>Cue voice</strong> to 1/2, 3/4, 3, 4 or Off. ▶ plays a test tone on each.<img class="btnimg" src="../img/buttons/test-tone.webp" width="57" height="57" loading="lazy" alt="Test tone play key"></li>
+        <li>If the phone only opens two channels on your interface, the page says so and DrumFill2 falls back to split mode instead of going silent.</li>
+      </ol>
+      <p class="note tip">Support varies by phone; four-channel streams can have more latency than stereo.</p>
+      </div>
+      <figure><img class="phone" src="../img/screens/outputs.webp" width="540" height="1200" loading="lazy" alt="Outputs: Separate outputs switch; Drums on 1/2, Click on 3/4, Cue voice on 3/4, each with a test tone key."><figcaption>Routing</figcaption></figure>
+    </div>
+  </section>
+  <nav class="pager" aria-label="More guides"><a class="key ghost" href="sounds.html">← Sounds</a><a class="key ghost" href="beatbox.html">Beatbox →</a></nav>
+  </div>
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="../">Home</a><a href="./">All guides</a><a href="../#download">Download</a><a href="../#faq">FAQ</a></nav>
+    <p>DrumFill2 is an independent hobby project, not affiliated with any drum machine maker. Screenshots are from the app on an Android emulator; your phone may look slightly different.</p>
+  </div>
+</footer>
+<script src="../js/site.js" defer></script>
+</body>
+</html>
