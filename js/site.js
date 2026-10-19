@@ -211,7 +211,7 @@
     var lastBar = state.bar + 1 >= s.bars;
     el.next.classList.toggle("armed", state.playing && lastBar && state.follow === "me" && !s.ending);
     el.next.textContent = state.sec < SONG.length - 1 ? "NEXT ▸ " + SONG[state.sec + 1].label.toUpperCase() : "NEXT";
-    setStage(state.playing ? s.color : "#F2A33A");
+    if (state.playing) setStage(s.color); else root.style.removeProperty("--stage");
   }
   function setLed(beat) {
     el.leds.forEach(function (l, i) { l.classList.toggle("on", i === beat); });

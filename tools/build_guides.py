@@ -354,6 +354,15 @@ HEAD = """<!doctype html>
 <title>{title} · DrumFill2 guides</title>
 <meta name="description" content="{desc}">
 <meta name="theme-color" content="#18191C">
+<meta property="og:title" content="{title} · DrumFill2 guides">
+<meta property="og:description" content="{desc}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://rbdone.github.io/drumfill2-site/guides/{page}">
+<meta property="og:image" content="https://rbdone.github.io/drumfill2-site/img/social-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title} · DrumFill2 guides">
+<meta name="twitter:description" content="{desc}">
+<meta name="twitter:image" content="https://rbdone.github.io/drumfill2-site/img/social-card.jpg">
 <link rel="icon" href="../img/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -443,7 +452,7 @@ def page(i, entry):
   </div>
 </div>
 """
-    return HEAD.format(title=title, desc=html.escape(lede), nav=nav(f)) + body + FOOT
+    return HEAD.format(title=title, desc=html.escape(lede), nav=nav(f), page=f) + body + FOOT
 
 
 def index():
@@ -461,7 +470,7 @@ def index():
   </ul>
 </div>
 """
-    return HEAD.format(title="How-to guides", desc="Step-by-step DrumFill2 guides with pictures of the keys to tap.", nav=nav("index.html")) + body + FOOT
+    return HEAD.format(title="How-to guides", desc="Step-by-step DrumFill2 guides with pictures of the keys to tap.", nav=nav("index.html"), page="") + body + FOOT
 
 
 OUT.mkdir(exist_ok=True)

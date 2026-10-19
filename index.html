@@ -12,6 +12,9 @@
 <meta property="og:url" content="https://rbdone.github.io/drumfill2-site/">
 <meta property="og:image" content="https://rbdone.github.io/drumfill2-site/img/social-card.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DrumFill2 · a drummer in your phone">
+<meta name="twitter:description" content="Full songs, real fills, big buttons. Follow chart or Follow me. Android, free download.">
+<meta name="twitter:image" content="https://rbdone.github.io/drumfill2-site/img/social-card.jpg">
 <link rel="icon" href="img/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -363,7 +366,8 @@
       <h2 id="pr-title">Serious musicians LOVE DrumFill2.*</h2>
       <p>We asked some of history's most serious musicians (and a few unserious emperors) what they think.</p>
     </div>
-    <div class="quotes">
+    <p class="swipe-hint" aria-hidden="true">Swipe for more praise →</p>
+    <div class="quotes" role="region" aria-label="Praise quotes (scrolls sideways on small screens)" tabindex="0">
       <figure class="quote reveal"><span class="stamp">PARODY</span>
         <blockquote>“Da-da-da-DUM. Then FILL. Then NEXT. My Fifth finally has a drummer who waits for me.”</blockquote>
         <figcaption><b>Ludwig van Beethoven</b>composer, 1770–1827 (did not say this)</figcaption></figure>
@@ -421,13 +425,13 @@
     </div>
     <div class="download-box">
       <div class="dl-card reveal">
-        <a class="key orange" href="https://github.com/rbdone/drumfill2-site/releases/latest/download/DrumFill2-v1.0.0-arm64-v8a.apk">↓ Download DrumFill2-v1.0.0-arm64-v8a.apk</a>
+        <a class="key orange" href="https://github.com/rbdone/drumfill2-site/releases/download/v1.0.0/DrumFill2-v1.0.0-arm64-v8a.apk">↓ Download the APK<small>DrumFill2-v1.0.0-arm64-v8a.apk</small></a>
         <ul class="meta">
           <li>Version 1.0.0 · about 150 MB · Android 9 or newer</li>
           <li>For 64-bit ARM phones (arm64-v8a): almost every Android phone from the last several years.</li>
-          <li>SHA-256 <button class="key ghost" type="button" data-copy="sha" style="min-height:32px;padding:0 10px;font-size:.7rem">Copy</button>
-            <code class="hash" id="sha">246be07d60afb479a6a28a078b7521598b56cfe5512fc024b78b706e181b633e</code></li>
-          <li>All checksums: <a href="https://github.com/rbdone/drumfill2-site/releases/latest/download/SHA256SUMS.txt">SHA256SUMS.txt</a> · <a href="https://github.com/rbdone/drumfill2-site/releases/latest">release page</a></li>
+          <li>SHA-256 of the APK:
+            <span class="hashrow"><code class="hash" id="sha">246be07d60afb479a6a28a078b7521598b56cfe5512fc024b78b706e181b633e</code><button class="key ghost copy" type="button" data-copy="sha" aria-label="Copy the SHA-256 checksum">Copy</button></span></li>
+          <li>All checksums: <a href="https://github.com/rbdone/drumfill2-site/releases/download/v1.0.0/SHA256SUMS.txt">SHA256SUMS.txt</a> · <a href="https://github.com/rbdone/drumfill2-site/releases/tag/v1.0.0">v1.0.0 release page</a></li>
         </ul>
       </div>
       <div class="reveal">
@@ -459,7 +463,7 @@
     <details><summary>Where do the grooves come from?</summary><div>The 300 patterns are original encodings of common, traditional grooves (backbeats, shuffles, bossa, one-drop…). None are transcribed from recordings. The sampled kits come from openly licensed recordings of real drum kits; Settings → Credits lists every author and licence.</div></details>
     <details><summary>Will it keep time with the screen off?</summary><div>Yes. Playback runs in the background with a notification, and the lock screen shows Play, Stop and Fill. Unplugging headphones or a phone call stops it cleanly.</div></details>
     <details><summary>What about my beatbox recordings?</summary><div>They stay on your phone and are only used to re-analyse a take. You can delete them in Settings → Beatbox recordings. Nothing is uploaded.</div></details>
-    <details><summary>Which APK do I need?</summary><div>The <code>arm64-v8a</code> one, for nearly every modern phone. The release page also has APKs for older 32-bit phones (<code>armeabi-v7a</code>) and <code>x86_64</code>.</div></details>
+    <details><summary>Which APK do I need?</summary><div><code>DrumFill2-v1.0.0-arm64-v8a.apk</code>, for nearly every modern phone. The <a href="https://github.com/rbdone/drumfill2-site/releases/tag/v1.0.0">v1.0.0 release page</a> also has <code>DrumFill2-v1.0.0-armeabi-v7a.apk</code> for older 32-bit phones, <code>DrumFill2-v1.0.0-x86_64.apk</code> for x86_64 devices, and <code>SHA256SUMS.txt</code> with the checksums of all three.</div></details>
   </div>
 </section>
 </main>
